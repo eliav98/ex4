@@ -13,10 +13,13 @@ def min_spanning_arborescence_nx(arcs, sink):
     G = DiGraph()
     for arc in arcs:
         G.add_edge(arc.head, arc.tail, weight=arc.weight)
+    print(len(G))
+    # if len(G) == 0:
+    #     print(arcs)
     ARB = minimum_spanning_arborescence(G)
-    result = {}
-    headtail2arc = {(a.head, a.tail): a for a in arcs}
-    for edge in ARB.edges:
-        tail = edge[1]
-        result[tail] = headtail2arc[(edge[0], edge[1])]
+    # result = {}
+    # headtail2arc = {(a.head, a.tail): a for a in arcs}
+    # for edge in ARB.edges:
+    #     tail = edge[1]
+    #     result[tail] = headtail2arc[(edge[0], edge[1])]
     return ARB
